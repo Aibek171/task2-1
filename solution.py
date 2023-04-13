@@ -11,7 +11,7 @@ def solution(x_success: int,
     alpha = 0.02
     success = np.array([x_success, y_success])
     cnt = np.array([x_cnt, y_cnt])
-    p_value = proportions_ztest(count = success, nobs = cnt, alternative='two-sided').pval
+    stat, p_value = proportions_ztest(count = success, nobs = cnt, alternative='two-sided')
     if p_value < alpha:
         return True
     else:
